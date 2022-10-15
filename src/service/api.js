@@ -9,3 +9,13 @@ export const authenticateSignUp = async (data) => {
         console.log("Error while connecting ", error);
     }
 }
+
+export const authenticateLogin = async (data) => {
+    try {
+
+        return await axios.post(`${URL}/login`, data);
+    } catch (error) {
+        console.log("Error while connecting ", error);
+        return error.response;
+    }
+}

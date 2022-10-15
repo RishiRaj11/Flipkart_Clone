@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const DataContext = createContext(null);
 
-const DataProvider = () => {
+const DataProvider = ({ children }) => {
   const [account, setAccount] = useState("");
 
   return (
@@ -12,7 +12,9 @@ const DataProvider = () => {
         account,
         setAccount,
       }}
-    ></DataContext.Provider>
+    >
+      {children}
+    </DataContext.Provider>
   );
 };
 
